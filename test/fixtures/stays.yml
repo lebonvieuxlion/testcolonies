@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entry_date: 2019-04-04 12:03:00
+  leaving_date: 2019-04-04 12:03:00
+  tenant: one
+  studio: one
+
+two:
+  entry_date: 2019-04-04 12:03:00
+  leaving_date: 2019-04-04 12:03:00
+  tenant: two
+  studio: two
