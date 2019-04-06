@@ -1,0 +1,8 @@
+<h1> Index of all stays </h1>
+
+<% @all_stays.each do |stay| %>
+
+	<%= "Stay #{stay.id}" %> <br>
+	<%= link_to "View more", stay_path(stay) %> <br> <br>
+
+<%end%>

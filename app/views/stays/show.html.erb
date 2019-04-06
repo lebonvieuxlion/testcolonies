@@ -1,0 +1,17 @@
+<h1> <%=" Page for the stay n°#{@stay.id}" %> </h1>
+
+<p> Studio rented : <%= @studio.name %> </p>
+<p> Rent per month : <%= @studio.monthly_price %> euros </p>
+<p> Date of entry : <%= @stay.entry_date.strftime("%d-%B-%Y") %> </p>
+<p> Date of departure : <%= @stay.leaving_date.strftime("%d-%B-%Y") %> </p>
+
+
+<h2> Rents per month for this stay </h2>
+
+<% @stay.all_rents_per_month.each do |key, value| %>
+
+	<p> <%= key %> </p>
+	<p> <%= value %> €</p> 
+	<br>
+
+<% end %>
