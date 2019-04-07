@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_04_100300) do
+ActiveRecord::Schema.define(version: 2019_04_06_125856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "discounts", force: :cascade do |t|
+    t.datetime "discount_start"
+    t.datetime "discount_end"
+    t.float "discount_rate"
+    t.bigint "stay_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stay_id"], name: "index_discounts_on_stay_id"
+  end
 
   create_table "stays", force: :cascade do |t|
     t.datetime "entry_date"

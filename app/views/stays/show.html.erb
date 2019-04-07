@@ -15,3 +15,36 @@
 	<br>
 
 <% end %>
+
+<!----------------------------------------- Discount part--------------------------------------------->
+
+<% if @stay.discounts.empty? %>
+
+	<p> No discount on this stay </p>
+
+
+<% else %>
+
+	<h2> Great you have at least one discount on your rent ! </h2>
+
+	<% @stay.discounts.each do |discount| %>
+		
+		<h4> <%="Discount n°#{discount.id} at the rate of #{(discount.discount_rate * 100).round(2)}%  "%></h4>
+
+		<p> Start of the discount : <%= discount.discount_start.strftime("%d-%B-%Y") %> </p>
+		<p> End of the discount : <%= discount.discount_end.strftime("%d-%B-%Y") %> </p>
+
+	<% end %>
+
+	<h2> Discounted rent </h2>
+
+
+	<% @stay.hash_rents_minus_all_discounts.each do |key, value| %>
+
+		<p> <%= key %> </p>
+		<p> <%= value %> €</p> 
+		<br>
+
+	<% end %>
+
+<% end %> 
